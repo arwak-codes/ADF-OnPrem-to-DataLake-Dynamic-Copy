@@ -2,8 +2,6 @@
 
 An Azure Data Factory (ADF) pipeline that copies CSV files from a **local C: drive folder** into **Azure Data Lake Storage Gen2**. The list of files comes from a **pipeline parameter (array)**, and a **ForEach** loop copies each file using **dynamic dataset parameters**. To add another file, you just add its name to the array. No pipeline changes needed.
 
-![Pipeline canvas](images/pipeline-canvas.png)
-
 ## The idea in plain words
 
 ADF lives in the cloud, so it can't see files on your own computer. To bridge that gap, you install a small program called a **Self-hosted Integration Runtime** on your machine. Think of it as a courier who lives inside your house: ADF tells the courier which files to fetch, and the courier carries them from your C: drive up to the cloud.
