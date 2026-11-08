@@ -1,0 +1,30 @@
+{
+    "name": "DynamicSource_FileServer",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "FileServer_OnPrem",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "pickFile": {
+                "type": "string"
+            }
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "FileServerLocation",
+                "fileName": {
+                    "value": "@dataset().pickFile",
+                    "type": "Expression"
+                }
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": []
+    }
+}
