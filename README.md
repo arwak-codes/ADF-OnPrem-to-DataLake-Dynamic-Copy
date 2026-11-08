@@ -96,10 +96,12 @@ After a successful run, each file listed in `files` appears in `bronze/OnPrem` i
 ```
 pipeline/
 └── OnPrem_Ingestion.json
-datasets/
 ├── DynamicSource_FileServer.json
 └── DynamicSink_FileServer.json
 images/
+sample-data/   (the two CSV files used for testing)
+└── DimAirline.csv
+└── DimFlight.csv
 ```
 
 Exported from ADF Studio using the **{ }** code view.
