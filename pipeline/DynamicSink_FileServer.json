@@ -1,0 +1,32 @@
+{
+    "name": "DynamicSink_FileServer",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "LS_datalake",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "putFile": {
+                "type": "string"
+            }
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "fileName": {
+                    "value": "@dataset().putFile",
+                    "type": "Expression"
+                },
+                "folderPath": "OnPrem",
+                "fileSystem": "bronze"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": []
+    }
+}
